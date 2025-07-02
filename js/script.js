@@ -7,6 +7,14 @@ const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
 
 
-
+const city = document.querySelector("#city");
+const getWeather = document.querySelector("#getWeather");
+const errorDiv = document.querySelector("#error");
+const weatherInfoDiv = document.querySelector("#weatherInfo");
+const cityName = document.querySelector("#cityName");
+const condition = document.querySelector("#condition");
+const temperature = document.querySelector("#temperature");
+const windSpeed = document.querySelector("#windSpeed");
+const humidity = document.querySelector("#humidity");
   
  
