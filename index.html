@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Weather Dashboard</h1>
+      <div class="input-section">
+        <input type="text" id="city" placeholder="Enter City Name" required />
+        <button id="getWeather">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <div id="error" class="error-message"></div>
+      <div id="weatherInfo" class="weather-info hidden">
+        <h2 id="cityName">London</h2>
+        <div id="condition" class="condition"></div>
+        <div class="details">
+          <div>
+            <i class="fa-solid fa-temperature-three-quarters"></i>
+            <span id="termerature"> </span> °C
+          </div>
+          <div>
+            <i class="fa-solid fa-wind"></i><span id="windSpeed"> </span> km/h
+          </div>
+          <div>
+            <i class="fa-solid fa-droplet"></i
+            ><span id="humidity"></span> %Humidity
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
