@@ -17,6 +17,7 @@ const forecastContainer = document.querySelector("#forecastContainer");
 // Event listener
 getWeatherBtn.addEventListener("click", fetchWeather);
 
+
 // Show current date
 const today = new Date();
 currentDateEl.textContent = today.toDateString();
@@ -66,6 +67,9 @@ async function fetchWeather() {
     const forecastData = await forecastRes.json();
 
     displayForecast(forecastData.list);
+    // Show the weather and forecast cards
+    document.querySelector(".weather-today").classList.remove("d-none");
+    document.querySelector(".forecast-box").classList.remove("d-none");
   } catch (error) {
      showError("Failed to fetch weather data. Please try again.");
   }

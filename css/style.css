@@ -5,12 +5,13 @@ input::placeholder {
 
  body {
       background: linear-gradient(to bottom right, #58c4f6, #5c9df5);
-      background-image: url(../img/dash-back.png);
+      background-image: url(../img/background-dynamic.gif);
       background-repeat: no-repeat;
       background-size: cover;
       font-family: 'Poppins', sans-serif;
       color: white;
 }
+
 
 
 header h1 {
@@ -62,9 +63,21 @@ button#getWeather {
   gap: 0.50rem;
 
 }
+.forecast-day {
+  background-color: #abb4c7; /* or any dark color */
+  border-radius: 10px;
+  color: white;
+}
+
 
 input#city {
       border-radius: 12px;
       height: 48px;
     }
+.details{
+  color: white;
+}
+.forecast-day .small {
+  color: white;
+}
 
