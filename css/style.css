@@ -12,12 +12,6 @@ input::placeholder {
       color: white;
 }
 
-#cityName, #temperature, #condition, #tempMax, #tempMin, #windSpeed, #humidity {
-  display: block !important;
-  visibility: visible !important;
-  color: black !important;
-}
-
 
 header h1 {
   color: white;
