@@ -16,18 +16,22 @@
   <h1 class="display-4 fw-bold">YOUR DAILY DRIZZLE</h1>
   <p id="currentDate" class="fs-5"></p>
 </header>
-    <!-- Search Location Section -->
-    <div class="row mb-4 align-items-end">
-      <div class="col-md-8 mb-2 mb-md-0">
-        <h2>ENTER YOUR LOCATION</h2>
-        <input type="text" id="city" class="form-control" placeholder="Paris" />
-      </div>
-      <div class="col-md-4 text-md-start">
-        <button id="getWeather" type="button" class="btn btn-primary w-100">
-          <i class="fa-solid fa-magnifying-glass me-2"></i>Submit
-        </button>
-      </div>
+   <!-- Search + Error Message Block -->
+<div class="mb-5">
+  <div class="row align-items-end">
+    <div class="col-md-8 mb-2 mb-md-0">
+      <h2>ENTER YOUR LOCATION</h2>
+      <input type="text" id="city" class="form-control" placeholder="Paris" />
     </div>
+    <div class="col-md-4 text-md-start">
+      <button id="getWeather" type="button" class="btn btn-primary w-100">
+        <i class="fa-solid fa-magnifying-glass me-2"></i>Submit
+      </button>
+    </div>
+  </div>
+  <!-- Error Message Below Search -->
+  <div id="errorMessage" class="text-danger fw-bold mt-2"></div>
+</div>
 
     <!-- Forecast Section -->
     <div class="row">
@@ -38,7 +42,7 @@
             <h2 id="cityName">City Name</h2>
             <p class="fw-bold">TODAY</p>
             <div class="display-4 mb-2"><span id="temperature">--</span>°C</div>
-            <div id="condition" class="display-4 mb-3"></div>
+            <div id="condition" class="display-6 mb-3"></div>
             <div class="mb-2">MAX: <span id="tempMax">--</span>°C, MIN: <span id="tempMin">--</span>°C</div>
             <div class="mb-2">
               <i class="fa-solid fa-wind me-2"></i><span id="windSpeed">--</span> km/h
@@ -121,6 +125,6 @@
       </div>
     </div>
   </main>
-  <script src="./js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

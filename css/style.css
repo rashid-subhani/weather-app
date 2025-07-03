@@ -5,12 +5,19 @@ input::placeholder {
 
  body {
       background: linear-gradient(to bottom right, #58c4f6, #5c9df5);
-      background-image: url(/img/dash-back.png);
+      background-image: url(../img/dash-back.png);
       background-repeat: no-repeat;
       background-size: cover;
       font-family: 'Poppins', sans-serif;
       color: white;
 }
+
+#cityName, #temperature, #condition, #tempMax, #tempMin, #windSpeed, #humidity {
+  display: block !important;
+  visibility: visible !important;
+  color: black !important;
+}
+
 
 header h1 {
   color: white;
