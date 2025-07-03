@@ -1,45 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Your Daily Drizzle</title>
 
-  <body>
-    <div class="container">
-      <h1>Weather Dashboard</h1>
-      <div class="input-section">
-        <input type="text" id="city" placeholder="Enter City Name" required />
-        <button id="getWeather">
-          <i class="fa-solid fa-magnifying-glass"></i>
+</head>
+<body>
+
+  <main class="container py-5 min-vh-100 align-items-center">
+    <header class="text-center my-4">
+  <h1 class="display-4 fw-bold">YOUR DAILY DRIZZLE</h1>
+  <p id="currentDate" class="fs-5"></p>
+</header>
+    <!-- Search Location Section -->
+    <div class="row mb-4 align-items-end">
+      <div class="col-md-8 mb-2 mb-md-0">
+        <h2>ENTER YOUR LOCATION</h2>
+        <input type="text" id="city" class="form-control" placeholder="Paris" />
+      </div>
+      <div class="col-md-4 text-md-start">
+        <button id="getWeather" type="button" class="btn btn-primary w-100">
+          <i class="fa-solid fa-magnifying-glass me-2"></i>Submit
         </button>
       </div>
-      <div id="error" class="error-message"></div>
-      <div id="weatherInfo" class="weather-info hidden">
-        <h2 id="cityName">London</h2>
-        <div id="condition" class="condition"></div>
-        <div class="details">
-          <div>
-            <i class="fa-solid fa-temperature-three-quarters"></i>
-            <span id="temperature"> </span> °C
+    </div>
+
+    <!-- Forecast Section -->
+    <div class="row">
+      <!-- Today Forecast -->
+      <div class="col-md-4 mb-4">
+        <div class="card weather-today h-100 text-white">
+          <div class="card-body">
+            <h2 id="cityName">City Name</h2>
+            <p class="fw-bold">TODAY</p>
+            <div class="display-4 mb-2"><span id="temperature">--</span>°C</div>
+            <div id="condition" class="display-4 mb-3"></div>
+            <div class="mb-2">MAX: <span id="tempMax">--</span>°C, MIN: <span id="tempMin">--</span>°C</div>
+            <div class="mb-2">
+              <i class="fa-solid fa-wind me-2"></i><span id="windSpeed">--</span> km/h
+            </div>
+            <div>
+              <i class="fa-solid fa-droplet me-2"></i><span id="humidity">--</span>% Humidity
+            </div>
           </div>
-          <div>
-            <i class="fa-solid fa-wind"></i><span id="windSpeed"> </span> km/h
-          </div>
-          <div>
-            <i class="fa-solid fa-droplet"></i
-            ><span id="humidity"></span> %Humidity
+        </div>
+      </div>
+
+      <!-- 5-Day Forecast -->
+      <div class="col-md-8 mb-4">
+        <div class="card forecast-box h-100">
+          <div class="card-body">
+            <h class="fw-bold">5-DAY FORCAST</h5>
+            <div id="forecastContainer" class="d-flex flex-wrap gap-3 justify-content-between">
+                <div class="forecast-day text-center p-2 flex-grow-1">
+                    <div class="day">Mon</div>
+                    <div class="icon mb-2"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <div class="details">
+                        <div class="temp fw-semibold mb-1">18°C</div>
+                        <div class="small text-muted">MAX: 20°C</div>
+                        <div class="small text-muted">MIN: 15°C</div>
+                        <div class="small text-muted"><i class="fa-solid fa-wind me-1"></i> 12 km/h</div>
+                        <div class="small text-muted"><i class="fa-solid fa-droplet me-1"></i> 60%</div>
+                    </div>
+                </div>
+
+                <div class="forecast-day text-center p-2 flex-grow-1">
+                    <div class="day">Tue</div>
+                    <div class="icon mb-2"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <div class="details">
+                        <div class="temp fw-semibold mb-1">18°C</div>
+                        <div class="small text-muted">MAX: 20°C</div>
+                        <div class="small text-muted">MIN: 15°C</div>
+                        <div class="small text-muted"><i class="fa-solid fa-wind me-1"></i> 12 km/h</div>
+                        <div class="small text-muted"><i class="fa-solid fa-droplet me-1"></i> 60%</div>
+                    </div>
+                </div>
+
+                <div class="forecast-day text-center p-2 flex-grow-1">
+                    <div class="day">Wed</div>
+                    <div class="icon mb-2"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <div class="details">
+                        <div class="temp fw-semibold mb-1">18°C</div>
+                        <div class="small text-muted">MAX: 20°C</div>
+                        <div class="small text-muted">MIN: 15°C</div>
+                        <div class="small text-muted"><i class="fa-solid fa-wind me-1"></i> 12 km/h</div>
+                        <div class="small text-muted"><i class="fa-solid fa-droplet me-1"></i> 60%</div>
+                    </div>
+                </div>
+
+                <div class="forecast-day text-center p-2 flex-grow-1">
+                    <div class="day">Thu</div>
+                    <div class="icon mb-2"><i class="fa-solid fa-cloud-sun"></i></div>
+                         <div class="details">
+                        <div class="temp fw-semibold mb-1">18°C</div>
+                        <div class="small text-muted">MAX: 20°C</div>
+                        <div class="small text-muted">MIN: 15°C</div>
+                        <div class="small text-muted"><i class="fa-solid fa-wind me-1"></i> 12 km/h</div>
+                        <div class="small text-muted"><i class="fa-solid fa-droplet me-1"></i> 60%</div>
+                    </div>
+                </div>
+
+                <div class="forecast-day text-center p-2 flex-grow-1">
+                    <div class="day">Fri</div>
+                    <div class="icon mb-2"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <div class="details">
+                        <div class="temp fw-semibold mb-1">18°C</div>
+                        <div class="small text-muted">MAX: 20°C</div>
+                        <div class="small text-muted">MIN: 15°C</div>
+                        <div class="small text-muted"><i class="fa-solid fa-wind me-1"></i> 12 km/h</div>
+                        <div class="small text-muted"><i class="fa-solid fa-droplet me-1"></i> 60%</div>
+                    </div>
+                </div>
+                </div>
           </div>
         </div>
       </div>
     </div>
-
-    <script src="./js/script.js"></script>
-  </body>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
 </html>
